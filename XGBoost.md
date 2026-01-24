@@ -18,6 +18,26 @@ O termo "XGBoost" é *eXtreme Gradient Boosting*, sendo um modelo baseado em ár
 
 ### Dataset
 
+#### Tratamento de Dados
+
+Pela natureza matemática do modelo de aprendizado, é necessário fazer a transformação dos dados categóricos em númericos.
+
+As duas formas principais de fazer essa transformação, são as técnicas:
+
+- **Ordinal Encoding**: Nesse caso, as classes são transformadas em valores númericos ordinais de forma aleatória. A sua desvantagem é que em features multi-classes, isso pode enviesar o modelo, ao criar uma hierarquia, na qual uma classe com valor "3" tenha um peso maior que a classe de valor "1", por isso sua escolha é destinada a features que já possuem uma ordem natural, e precisa ser feita manualmente para garantir a ordem original.
+
+> Como o "BMI Category" dessa dataset, onde: *Normal < Overweight < Obese*.
+
+- **One-hot Encoding**: Nessa situação, o problema anterior é resolvido, a partir de uma feature nova (contendo valores de 0 ou 1, para "não possui" ou "possui" respectivamente) para cada classe da antiga feature multiclasse. É um processo mais custoso e que aumenta a quantidade de dados a ser analisado pelo modelo, mas garante a influência correta de cada classe no resultado.
+
+	- Outro ponto de cautela no *One-hot*, é que nesse caso por se tratar de um dataset pequeno, pode acontecer de haver classes que fiquem apenas no conjunto de teste, nessa situação a escolha foi que o modelo ignorasse essa classe inédita e focasse nas demais features.
+
+> A questão do aumento de colunas é compactada com a utilização do PCA.
+
+Dessa forma, o melhor a se fazer é usar as duas técnicas nas colunas que fazem sentido, a fim de obter um melhor resultado.
+
+#### Processamento de Dados
+
 Por se tratar de um dataset "pequeno", com poucas features, analisando a correlação entre essas features, foi observado que existiam muitas variáveis altamente correlacionadas. Dessa forma, buscando evitar a influência que essa multicolinearidade poderia causar, foi utilizado:
 
 - **PCA (Principal Component Analysis)**: De forma resumida, é uma ferramenta que busca encontrar um "ângulo" para enxergar os dados de uma forma que eles estejam totalmente independentes entre si, além de aplicar uma redução de de dimensionalidade baseado na variância dos dados.
@@ -28,7 +48,7 @@ Por se tratar de um dataset "pequeno", com poucas features, analisando a correla
 
 > A aplicação dessa ferramenta gera variáveis sintéticas, mas menos ruidosas, porém isso mistura as variáveis e reduz a explicabilidade do resultado.
 
-Por isso, que é utilizado a ferramenta "SHAP" que calcula a contribuição de cada feature para a predição final, como se fosse um Raio-X em cima do resultado embaralhado gerado pelo PCA.
+Por isso, que é utilizado a ferramenta "SHAP" que calcula a contribuição de cada feature para a predição final. Contudo, essa análise é feita sobre as features construídas pelo PCA, que são uma combinação de váriaveis originais.
 
 > O uso do *stratify* no split dos conjuntos de treino e teste, serve para garantir que a proporção das 3 classes do **Target** esteja mantida no treino e no teste, com foco de não ignorar a classe minoritária.
 
@@ -65,4 +85,3 @@ Dessa maneira, essa ferramenta faz essa busca, construindo todas as combinaçõe
 É evidente, que esse processo é bem custoso computacionalmente e no tempo, contudo como esse dataset não é muito grande, e ainda tem suas features otimizadas pelo processo de PCA, essa questão não será muito relevante, favorecendo muito o seu uso em busca do melhor modelo possível.
 
 > O pipeline colabora muito nessa etapa, pois garante a aplicação de todas as transformações nos conjuntos de dados gerado pelo Cross-Validation a cada iteração de combinação de hiperparâmetros.
-
