@@ -1,0 +1,8 @@
+pandas
+kagglehub
+joblib
+numpy
+scikit-learn
+imbalanced-learn
+seaborn
+shap
