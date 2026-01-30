@@ -1,0 +1,2 @@
+Model,Dataset,Best_Params,Train_F2_Macro,Train_F1_Macro,Train_Accuracy,Test_F2_Macro,Test_F1_Macro,Test_Accuracy,Test_Precision,Test_Recall,Test_AUC_ROC,Test_Brier_Score
+SVM,Base,"{'classifier__C': 10, 'classifier__gamma': 'auto', 'classifier__kernel': 'rbf', 'resampler': SMOTE(random_state=42)}",0.9975085118254594,0.9971991931685906,0.9970260223048328,0.988866915696184,0.9874643874643875,0.9866666666666667,0.9855072463768115,0.98989898989899,1.0,0.007126747117306531

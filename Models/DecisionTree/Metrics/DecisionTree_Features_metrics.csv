@@ -1,0 +1,2 @@
+Model,Dataset,Best_Params,Train_F2_Macro,Train_F1_Macro,Train_Accuracy,Test_F2_Macro,Test_F1_Macro,Test_Accuracy,Test_Precision,Test_Recall,Test_AUC_ROC,Test_Brier_Score
+DecisionTree,Features,"{'classifier__criterion': 'entropy', 'classifier__max_depth': None, 'classifier__min_samples_leaf': 1, 'resampler': SMOTE(random_state=42)}",1.0,1.0,1.0,0.9731015550846279,0.9712468410142829,0.9733333333333334,0.9696969696969697,0.9747474747474748,0.9813131313131312,0.017777777777777778
