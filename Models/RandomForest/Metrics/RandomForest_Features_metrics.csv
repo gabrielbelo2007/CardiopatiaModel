@@ -1,0 +1,2 @@
+Model,Dataset,Best_Params,Train_F2_Macro,Train_F1_Macro,Train_Accuracy,Test_F2_Macro,Test_F1_Macro,Test_Accuracy,Test_Precision,Test_Recall,Test_AUC_ROC,Test_Brier_Score
+RandomForest,Features,"{'classifier__max_depth': 5, 'classifier__min_samples_split': 5, 'classifier__n_estimators': 50, 'resampler': RandomUnderSampler(random_state=42)}",0.9856996382289166,0.9840661900246033,0.9832782596723117,0.97768770084721,0.9750905797101449,0.9733333333333334,0.9722222222222222,0.9797979797979798,0.9975632334122899,0.019602198934766977

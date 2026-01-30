@@ -1,0 +1,2 @@
+Model,Dataset,Best_Params,Train_F2_Macro,Train_F1_Macro,Train_Accuracy,Test_F2_Macro,Test_F1_Macro,Test_Accuracy,Test_Precision,Test_Recall,Test_AUC_ROC,Test_Brier_Score
+XGBoost,Base,"{'classifier__learning_rate': 0.1, 'classifier__max_depth': 5, 'classifier__n_estimators': 50, 'resampler': 'passthrough'}",1.0,1.0,1.0,0.9885695886661837,0.9867417135709818,0.9866666666666667,0.9841269841269842,0.98989898989899,1.0,0.007037639943772096
