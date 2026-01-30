@@ -27,6 +27,7 @@ O modelo classifica o risco em 5 categorias: **Normal, Elevada, Estágio 1, Est�
 
 ## 📁 Estrutura do Repositório
 
+```
 CardiopatiaModel/
 ├── Colab/                  # Notebooks otimizados para execução no Google Colab
 ├── Data/
@@ -39,6 +40,7 @@ CardiopatiaModel/
 │   └── XGBoost/            # Artefatos: Metrics e Plots (Matriz de Confusão, etc)
 ├── README.md               # Documentação principal
 └── .gitignore
+```
 
 ---
 
@@ -49,7 +51,7 @@ O projeto utiliza, até o momento, o **Sleep Health and Lifestyle Dataset**, que
 - Hábitos de sono  
 - Estilo de vida  
 - Indicadores de saúde  
-- Variáveis potencialmente associadas a doenças cardiovasculares.;
+- Variáveis potencialmente associadas a doenças cardiovasculares
 
 O dataset é utilizado inicialmente para **exploração, visualização e entendimento dos dados**, sem aplicação direta de modelos preditivos nesta fase.
 
