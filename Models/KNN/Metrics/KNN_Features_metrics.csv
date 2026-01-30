@@ -1,2 +1,0 @@
-Model,Dataset,Best_Params,Train_F2_Macro,Train_F1_Macro,Train_Accuracy,Test_F2_Macro,Test_F1_Macro,Test_Accuracy,Test_Precision,Test_Recall,Test_AUC_ROC,Test_Brier_Score
-KNN,Features,"{'classifier__metric': 'manhattan', 'classifier__n_neighbors': 5, 'classifier__weights': 'distance', 'resampler': SMOTE(random_state=42)}",1.0,1.0,1.0,0.9551777995713921,0.9507168458781362,0.9466666666666667,0.9487179487179488,0.9595959595959597,0.9822710483087841,0.02400201110761579

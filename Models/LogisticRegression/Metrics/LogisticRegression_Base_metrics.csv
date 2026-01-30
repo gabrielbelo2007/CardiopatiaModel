@@ -1,2 +1,0 @@
-Model,Dataset,Best_Params,Train_F2_Macro,Train_F1_Macro,Train_Accuracy,Test_F2_Macro,Test_F1_Macro,Test_Accuracy,Test_Precision,Test_Recall,Test_AUC_ROC,Test_Brier_Score
-LogisticRegression,Base,"{'classifier__C': 10.0, 'classifier__solver': 'lbfgs', 'resampler': RandomUnderSampler(random_state=42)}",0.9920424936238008,0.9912478609851737,0.9907076965441279,0.9157774886141835,0.91,0.9066666666666666,0.9119047619047619,0.9227272727272727,0.9959215696951546,0.0395463033981383
